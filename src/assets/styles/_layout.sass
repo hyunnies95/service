@@ -1,0 +1,146 @@
+.container
+  padding: 0 3rem
+  margin: 0 auto
+  width: 100%
+  max-width: 160rem
+
+.card
+  background-color: $white
+  border-radius: $border-radius
+  border: 1px solid $border
+  // box-shadow: $card-shadow
+  padding: 4.5rem 5rem 6rem
+  margin-bottom: 3.4rem
+  &--step
+    cursor: pointer
+    display: flex
+    align-items: center
+    transition: all 0.3s ease
+    padding: 2rem 5rem
+    height: 8.3rem
+    &:hover
+      box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.15)
+  &_header
+    display: flex
+    align-items: center
+    justify-content: space-between
+    margin-bottom: 4rem
+    & h3
+      margin: 0
+  &_content
+    height: 100%
+  &_footer
+    display: flex
+    align-items: center
+    justify-content: flex-end
+    gap: 1rem
+
+.btn
+  background: transparent
+  border: 1px solid $black
+  border-radius: 1rem
+  display: flex
+  align-items: center
+  justify-content: center
+  gap: 1.2rem
+  font-size: 1.7rem
+  font-weight: 600
+  padding: 0 3rem
+  transition: all 0.3s ease
+  min-height: 5rem
+  &--black
+    background: $black
+    color: $white
+  &:hover
+    background: $black
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.25)
+    color: $white
+    transform: translateY(-4px)
+  &--accent
+    background: $accent
+    border-color: $accent
+    color: $black
+    font-size: 1.8rem
+    min-height: 5.5rem
+    width: 22rem
+    &:hover
+      background: $white
+      border-color: $white
+      color: $black
+
+.toggle
+  transition: all 0.3s ease
+  & i
+    font-size: 2.4rem
+  &:hover
+    color: $accent
+
+.form_row
+  display: flex
+  align-items: flex-end
+  flex-wrap: wrap
+  gap: 2.8rem
+  width: 100%
+  @media (min-width: $small)
+    flex-wrap: nowrap
+.form_group
+  width: 100%
+  margin-bottom: 2.1rem
+
+.table
+  border-collapse: collapse
+  border-radius: 1rem
+  overflow: hidden
+  width: 100%
+  // box-shadow: 0 0 2px rgba(0, 0, 0, 1)
+  & *
+    position: relative
+  & td,th
+    line-height: 1.9rem
+    font-size: 1.7rem
+    padding: 2rem 3rem
+    &:last-child
+      padding-left: 0.4rem
+  & thead
+    background: $black
+    border-bottom: 1px solid $black
+    & tr
+      color: #ffffff
+      text-align: left
+    & th
+      background: $black
+      padding: 2.2rem 3rem
+      font-weight: 400
+      &:nth-child(2),
+      &:nth-child(3)
+        min-width: 11.5rem
+
+  & tbody 
+    & tr
+      font-weight: 600
+      &:not(:last-of-type)
+        border-bottom: 1px solid $border
+
+
+
+.modal
+  & .overlay
+    background: $black
+    opacity: .5
+    position: fixed
+    left: 0
+    top: 0
+    height: 100vh
+    width: 100vw
+    z-index: 3
+  & .card
+    border-radius: 0.5rem
+    position: absolute
+    top: 50%
+    left: 50%
+    transform: translate(-50%, -50%)
+    width: 100%
+    z-index: 3
+  & .close i
+    color: $accent
+    font-size: 2rem

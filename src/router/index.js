@@ -1,20 +1,63 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import HomeView from '../views/HomeView.vue'
+import HomePage from '../views/HomePage.vue'
+import CreateProject from '../views/CreateProject.vue'
+import AccountSettings from '../views/AccountSettings.vue'
+// import ProfilePage from '../views/ProfilePage.vue'
+import UserProfile from '../views/UserProfile.vue'
+import HomeHeader from '../components/Layout/HomeHeader.vue'
+import ProfileHeader from '../components/Layout/ProfileHeader.vue'
+import SideMenu from '../components/Layout/SideMenu.vue'
+import LoginPage from '../views/LoginPage.vue'
+import RegisterPage from '../views/RegisterPage.vue'
 
 const routes = [
   {
     path: '/',
     name: 'home',
-    component: HomeView
+    components: {
+      default: HomePage,
+      header: HomeHeader,      
+    }
   },
   {
-    path: '/about',
-    name: 'about',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/AboutView.vue')
-  }
+    path: '/login',
+    name: 'login',
+    components: {
+      default: LoginPage,
+      header: HomeHeader,      
+    }
+  },
+  {
+    path: '/register',
+    name: 'Register',
+    components: {
+      default: RegisterPage,
+      header: HomeHeader,      
+    }
+  },
+  {
+    path: '/create',
+    name: 'create',
+    component: CreateProject
+  },
+  {
+    path: '/profile',
+    name: 'profile',
+    components: {
+      profile: UserProfile,
+      header: ProfileHeader,
+      sidebar: SideMenu,
+    },
+  },
+  {
+    path: '/account',
+    name: 'account',
+    components: {
+      profile: AccountSettings,
+      header: ProfileHeader,
+      sidebar: SideMenu,
+    },
+  },
 ]
 
 const router = createRouter({
