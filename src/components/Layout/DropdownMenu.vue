@@ -5,10 +5,9 @@
     </button>
     <ul>
       <li>
-        <a class="dropdown_link" href="/account">
-          <i class="fa-solid fa-gear"></i>
-          Настройки профиля
-        </a>
+        <router-link to="/account" class="dropdown_link"> <i class="fa-solid fa-gear"></i>
+          Настройки профиля</router-link>
+
       </li>
       <li>
         <a class="dropdown_link" href="#">

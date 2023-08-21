@@ -2,11 +2,11 @@
   <header class="header">
     <div class="header_wrapper container">
       <div class="header_logo">
-        <a href="/" class="logo">Сервис Строительства</a>
+        <router-link to="/" class="logo">Сервис Строительства</router-link>
       </div>
       <nav class="header_links">
-        <a href="/profile">Профиль</a>
-        <a href="/login" class="login">Войти</a>
+        <router-link to="/profile">Профиль</router-link>
+        <router-link to="/login" class="login">Войти</router-link>
       </nav>
 
     </div>

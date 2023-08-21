@@ -3,9 +3,8 @@
     <div class="menu_top">
       <ul>
         <li class="menu_item">
-          <a href="/profile" class="menu_link menu_link--active">
-            Главная
-          </a>
+        <router-link to="/profile" class="menu_link menu_link--active">Главная</router-link>
+
         </li>
         <li class="menu_item">
           <a href="#" class="menu_link">
@@ -27,9 +26,7 @@
     <div class="menu_bottom">
       <ul>
         <li class="menu_item">
-          <a href="/account" class="menu_link">
-            Аккаунт
-          </a>
+        <router-link to="/account" class="menu_link">Аккаунт</router-link>
         </li>
         <li class="menu_item">
           <a href="#" class="menu_link">
