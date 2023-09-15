@@ -1,7 +1,11 @@
 <template>
-  {{ currentUser }}
-    <WorksTable />
-{{ object }}
+  <div class="wrapper">
+    <div class="container">
+      {{ user }}
+      <WorksTable />
+      {{ object }}
+    </div>
+  </div>
   <!-- <StepsSection /> -->
 </template>
 
@@ -20,7 +24,8 @@ export default {
   },
   data () {
     return {
-      object: null
+      user: null,
+      object: ''
     }
   },
   computed: {
@@ -31,7 +36,7 @@ export default {
   mounted() {
     UserService.getUserObject().then(
       response => { 
-        this.object = response.data[0]
+        this.object = response.data
        },
       (error) => {
         this.object =
@@ -43,13 +48,26 @@ export default {
           EventBus.dispatch('logout')
         }
       }
-    );
+    )
+    UserService.getUser().then(
+      response => { 
+        this.user = response.data
+       }
+    )
   }
 }
 </script>
 
 <style lang="sass" scoped>
-
-
+.wrapper
+  background: $background
+  display: flex
+  margin-top: 14rem
+  min-height: calc(100vh - 14rem)
+  @media (min-width: $medium)
+    margin-left: 36rem
+.container
+  padding: 4rem 3.6rem
+  max-width: 160rem
 
 </style>

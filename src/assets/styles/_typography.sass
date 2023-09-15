@@ -1,27 +1,32 @@
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@800&family=Noto+Serif:ital,wght@0,300;0,500;0,600;1,400&family=Nunito:wght@400;500;600;700&display=swap')
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Nunito:wght@400;500;600;700&display=swap')
 
 *
   font-family: 'Nunito', sans-serif
   font-size: 1.6rem
 
-h1, h2, h3, h4, p, a
+h1, h2, h3, h4
+  font-family: 'Inter', sans-serif
   margin: 0
 
 h1
-  font-size: 8rem
+  font-size: 5.6rem
+  line-height: 6.4rem
+  margin-bottom: 6.4rem
+  text-align: center
 
 h2
-  font-size: 3rem
-  font-weight: 600
-  line-height: 4.1rem
-  margin-bottom: 0rem
+  font-size: 4.8rem
+  font-weight: 700
+  line-height: 5.6rem
+  letter-spacing: -1px
+  margin-bottom: 4rem
 
 h3
   color: $black
-  font-size: 2.3rem
+  font-size: 2.9rem
   font-weight: 600
-  margin-bottom: 1.5rem
-  line-height: 3.1rem
+  margin-bottom: 1.6rem
+  line-height: 4rem
 
 h4
   font-size: 1.9rem
@@ -29,7 +34,13 @@ h4
   
 
 p
-  font-size: 1.7rem
+  font-size: 1.9rem
+  font-family: 'Nunito', sans-serif
+  line-height: 3.2rem
+  margin: 0
+
+a
+  margin: 0
 
 label
   color: $black
@@ -41,7 +52,6 @@ label
 input
   border: 1px solid $border
   border-radius: 0.5rem
-  background-color: #fdfdfd
   font-size: 1.4rem
   font-weight: 600
   padding: 1.2rem 1.5rem
@@ -60,8 +70,7 @@ input
 
 .tag
   border-radius: 5rem
-  border: 1px solid $accent
-  color: $white
+  color: $black
   font-size: 1.3rem
   font-weight: 600
   display: inline-flex
@@ -70,18 +79,43 @@ input
   padding: 0 1.4rem 0 1.2rem
   height: 2.6rem
   &--accent
-    background: #fffdf0
-    border-color: $accent
-    color: $accent
+    background: $accent
   &--gray
-    background: #f3f3f3
-    border-color: $gray
-    color: $gray
+    background: $gray
   &--black
-    border-color: $black
-    color: $black
+    background: $black
+    color: $white
   & i
     font-size: 0.4rem
     margin-right: 0.6rem
 
-    
+.underline
+  font-size: inherit !important
+  font-family: inherit !important
+  background-image: url('~@/assets/images/style/underline.svg')
+  overflow: visible
+  background-repeat: no-repeat
+  background-position: 50% 100%
+  background-size: 100%
+
+.circle
+  border-radius: 50% 
+  background: $accent
+  font-weight: 700
+  display: flex
+  align-items: center
+  justify-content: center
+  margin: 0 auto 4rem
+  height: 9.6rem
+  width: 9.6rem
+  & i
+    color: $black
+    font-size: 3.4rem
+
+.error-feedback
+  color: red
+  font-size: 1.25rem
+  line-height: 0.4rem
+  position: absolute
+  left: 0
+  bottom: -1rem

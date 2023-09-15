@@ -1,6 +1,6 @@
 <template>
   <div class="register">
-    <h3 class="register__title">Регистрация</h3>
+    <h3 class="register__title">Создать аккаунт</h3>
     <Form class="register__form" @submit="handleRegister" :validation-schema="schema">
       <div class="register__form-group">
         <Field type="text" name="username" placeholder="Имя пользователя" />
@@ -132,7 +132,7 @@ export default {
     display: grid
     grid-template-columns: 1fr 1fr
     gap: 1.3rem
-    margin-top: 4rem
+    margin-top: 3rem
 
 
 .btn
@@ -140,17 +140,21 @@ export default {
   height: 5.4rem
   width: 100%
 
-input[type="text"]
-  margin-bottom: 1.6rem
+input
+  margin-bottom: 2.2rem
+  position: relative
+  border: 1px solid $black
+  &:focus
+    border-color: $black
   
 input[type="radio"]
   display: none
   &:checked + label
     background-color: $col-accent-opacity
-    border-color: $col-accent
-    color: $col-accent
+    border-color: $accent
+    color: $accent
     &::before
-      border-color: $col-accent
+      border-color: $accent
   
 label
   border-radius: 0.7rem

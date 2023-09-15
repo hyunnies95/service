@@ -68,10 +68,10 @@ export default {
   padding: 0 7rem 0 3rem
   position: fixed
   transition: all 0.4s ease
-  top: 8.3rem
+  top: 10rem
   left: -33rem
   width: 33rem
-  height: calc(100vh - 8.3rem)
+  height: calc(100vh - 10rem)
   z-index: 2
   &::before
     background: $black
@@ -85,8 +85,7 @@ export default {
     width: 0
   @media (min-width: $medium)
     display: flex
-    background: $background
-    border-right: 1px solid $border
+    background: $white
     position: fixed
     left: 0
     min-width: 36rem

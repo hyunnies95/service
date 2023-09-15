@@ -1,5 +1,5 @@
 <template>
-    <h2>{{ choosedRoom.name }}</h2>
+    <h3>{{ choosedRoom.name }}</h3>
     <div class="grid">
       <div class="plan">
         <div class="plan__floor">
@@ -9,7 +9,7 @@
         </div>
       </div>
       
-      <!-- <ul class="parameters__area">
+      <ul class="parameters__area">
         <h4>Площадь помещения:</h4>
         <li>
           Площадь стен: <b>{{ wallsArea ? wallsArea : 0 }} м²</b>
@@ -23,7 +23,8 @@
         <li>
           Итоговая площадь <br>с вычетом проемов: <b>{{ totalArea ? totalArea : 0 }} м²</b>
         </li>
-      </ul> -->
+      </ul>
+    </div>
 
       <form class="parameters">
         <h4>Размеры помещения:</h4>
@@ -61,8 +62,17 @@
         </ul>
 
       </div>
+
+    <!-- <ObjectWorks /> -->
+    <div class="works">
+      <h4>Необходимые работы:</h4>
+      <ul class="works_list">
+        <li v-for="work in works" :key="work" class="works_item">
+          {{ work }}
+        </li>
+      </ul>
     </div>
-    <ObjectWorks />
+
     <div class="card_footer">
       <button class="btn btn--white" @click="this.$emit('set-component', 'ObjectRooms')">
         Назад
@@ -111,13 +121,12 @@
 </template>
 
 <script>
-import ObjectWorks from '@/components/CreateProject/ObjectWorks.vue'
+// import ObjectWorks from '@/components/CreateProject/ObjectWorks.vue'
 
 export default {
   props: ['choosedRoom'],
   emits: ['set-component', 'update-rooms'],
   components: {
-    ObjectWorks
   },
   data () {
     return {
@@ -130,6 +139,7 @@ export default {
       },
       openingsNumber: null,
       openings: [],
+      works: ['Демонтажные работы', 'Электромонтажные работы']
     }
   },
   computed: {
@@ -252,14 +262,16 @@ export default {
 </script>
 
 <style lang="sass" scoped>
-h3
-  margin-bottom: 3.6rem
 .card
   &_footer
     display: flex
     justify-content: space-between
 
-
+.grid
+  display: grid
+  grid-template-columns: 1fr 43%
+  gap: 2rem
+  margin-bottom: 3rem
 .parameters
   &__buttons
     display: flex
@@ -281,8 +293,6 @@ h3
     border-radius: $border-radius
     display: flex
     flex-direction: column
-    grid-column: 2 / 3
-    grid-row: 1 / 2
     padding: 3rem
     & li
       display: flex
@@ -332,10 +342,7 @@ h3
   display: flex
   align-items: center
   justify-content: center
-  grid-column: 1 / 3
-  grid-row: 1 / 2
   padding: 3rem
-  margin: 3rem 0
   &__floor
     border: 4px solid $black
     transition: 0.1s ease-in-out
@@ -374,6 +381,31 @@ h3
     font-style: italic
     font-size: 1.8rem
     color: $gray
-
-
+.works
+  margin: 2rem 0 4rem
+  &_list
+    display: grid
+    grid-template-columns: 1fr 1fr
+    gap: 1.2rem
+    margin-bottom: 1rem
+    & li
+      background-color: $background
+      border: 1px solid $background
+      border-radius: 1rem
+      font-weight: 500
+      font-size: 1.5rem
+      text-align: left
+      text-transform: uppercase
+      transition: 0.3s ease-in-out
+      padding: 0 3rem
+      position: relative
+      letter-spacing: 0.2px
+      display: flex
+      align-items: center
+      justify-content: space-between
+      height: 11rem
+      width: 100%
+      &:hover
+        cursor: pointer
+    
 </style>

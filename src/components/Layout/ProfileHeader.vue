@@ -19,6 +19,8 @@
 
 <script>
 import DropdownMenu from '@/components/Layout/DropdownMenu.vue'
+import UserService from '@/services/user.service'
+
 export default {
   name: 'AppHeader',
   components: {
@@ -26,8 +28,16 @@ export default {
   },
   data () {
     return {
-      showDropdown: false
+      showDropdown: false,
+      user: null
     }
+  },
+  mounted() {
+    UserService.getUser().then(
+      response => { 
+        this.user = response.data
+       }
+    )
   }
 }
 </script>
@@ -43,18 +53,19 @@ export default {
   top: 0
   width: 100%
   padding: 0 2rem 0 0
-  height: 8.3rem
+  height: 10rem
   z-index: 1
   &::before
-    // background-size: auto auto
-    // background-color: rgba(234, 201, 93, 1)
-    // background-image: repeating-linear-gradient(135deg, transparent, transparent 20px, rgba(255, 218, 96, 1) 20px, // rgba(255, 218, 96, 1) 40px )
-    // content: ''
-    // position: absolute
-    // bottom: -4.1rem
-    // left: 0
-    // height: 4rem
-    // width: 100%
+    background-size: auto auto
+    background-color: rgba(234, 201, 93, 1)
+    background-color: $accent
+    // background-image: repeating-linear-gradient(135deg, transparent, transparent 20px, rgba(255, 218, 96, 1) 20px, rgba(255, 218, 96, 1) 40px )
+    content: ''
+    position: absolute
+    bottom: -4.1rem
+    left: 0
+    height: 4rem
+    width: 100%
   @media (min-width: $medium)
     padding: 0 3.6rem 0 0
   &_logo
@@ -63,8 +74,6 @@ export default {
     width: 100%
     max-width: 36rem
     @media (min-width: $medium)
-      border-right: 1px solid $border
-      background: $background
   &_wrapper
     position: relative
   &_user
@@ -77,6 +86,7 @@ export default {
     align-items: center
     gap: 1.6rem
   & .logo
+    font-family: 'Inter', sans-serif
     font-size: 2.2rem
     font-weight: 900
     line-height: 2.2rem

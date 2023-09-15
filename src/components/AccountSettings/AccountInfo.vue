@@ -1,6 +1,6 @@
 <template>
   <div class="card">
-    <h3>Информация об аккаунте:</h3>
+    <h4>Информация об аккаунте:</h4>
     <form class="form">
       <div class="form_row">
         <div class="form_group">

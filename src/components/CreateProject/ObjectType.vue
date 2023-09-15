@@ -1,7 +1,7 @@
 <template>
   <div class="card_content">
   <div class="card_header">
-    <h2>Где нужен ремонт?</h2>
+    <h3>Где нужен ремонт?</h3>
     <button class="close" @click="this.$parent.$emit('close')">
       <i class="fa-solid fa-xmark"></i>
     </button>

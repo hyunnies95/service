@@ -2,12 +2,13 @@
   <div class="modal">
     <div class="overlay" @click="this.$emit('close')"></div>
     <div class="card">
-      <!-- {{ object }}
-      <br>
-      {{ rooms }} -->
       <!-- <div class="summary">
       </div> -->
       <div class="card_content">
+        {{ object }}
+        <br>
+        {{ rooms }}
+        
         <ObjectType 
         v-if="component === 'ObjectType'" 
         @set-component="setComponent"
@@ -112,7 +113,7 @@ export default {
 .card
   display: flex
   gap: 3rem
-  padding: 3.5rem 4rem 3rem 3rem
+  padding: 3.5rem
   width: 100%
   max-width: 100rem
   &_content

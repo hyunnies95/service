@@ -1,6 +1,6 @@
 <template>
   <div class="card">
-    <h3>Фото профиля:</h3>
+    <h4>Фото профиля:</h4>
     <div class="card_upload">
       <img class="card_avatar" :src="require(`@/assets/images/avatar.jpg`)" alt="avatar">
       <input type="file">

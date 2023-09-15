@@ -39,7 +39,7 @@ export default {
   },
   data () {
     const schema = yup.object().shape({
-      username: yup.string().required('* Введите имя пользователя или электронную почту'),
+      username: yup.string().required('* Введите имя пользователя или email'),
       password: yup.string().required('* Введите пароль'),
     })
 
@@ -103,13 +103,12 @@ export default {
       margin: 2rem 1.5rem 0
       width: 4.5rem
   &__form-group
-    margin-bottom: 1.6rem
+    margin-bottom: 2.2rem
     position: relative
-
-
+  & input
+    border: 1px solid $black
 .btn
   margin: 2.6rem 0 1.5rem
   height: 5.4rem
   width: 100%
-
 </style>

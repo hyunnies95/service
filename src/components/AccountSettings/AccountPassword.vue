@@ -1,6 +1,6 @@
 <template>
   <div class="card">
-    <h3>Пароль:</h3>
+    <h4>Пароль:</h4>
     <form class="form">
       <div class="form_group">
         <label for="password">Старый пароль:</label>

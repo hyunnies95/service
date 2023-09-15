@@ -1,7 +1,7 @@
 <template>
 <div class="card_content">
   <div class="card_header">
-    <h2>Парметры помещений</h2>
+    <h3>Парметры помещений</h3>
     <button class="close" @click="this.$parent.$emit('close')">
       <i class="fa-solid fa-xmark"></i>
     </button>
@@ -16,7 +16,7 @@
       </div>
       <div class="room_buttons">
         <i class="fa-solid fa-pen-to-square"></i>
-        <i @click="deleteRoom(index)" v-if="room.index !== 0" class="fa-solid fa-trash"></i>
+        <i @click="deleteRoom(room.index)" v-if="room.index !== 0" class="fa-solid fa-trash"></i>
       </div>
     </li>
     <li class="room" @click="addRoom">
@@ -78,7 +78,7 @@ export default {
   transition: all 0.3s ease
   position: relative
   padding: 3rem
-  height: 15rem
+  min-height: 15rem
   width: 100%
   &:hover
     border-color: $black
@@ -114,6 +114,7 @@ export default {
     position: absolute
     right: 2rem
     top: 2rem
+    z-index: 5
     
 
 

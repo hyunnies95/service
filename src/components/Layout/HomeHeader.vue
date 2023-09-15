@@ -2,13 +2,14 @@
   <header class="header">
     <div class="header_wrapper container">
       <div class="header_logo">
-        <router-link to="/" class="logo">Сервис Строительства</router-link>
+        <router-link to="/" class="logo">
+          <i class="ri-home-smile-fill"></i>Сервис Строительства
+        </router-link>
       </div>
       <nav class="header_links">
         <router-link to="/profile">Профиль</router-link>
-        <router-link to="/login" class="login">Войти</router-link>
+        <router-link to="/login" class="login btn">Войти</router-link>
       </nav>
-
     </div>
   </header>
 </template>
@@ -25,9 +26,11 @@ export default {
 <style lang="sass" scoped>
 .header
   background-color: $white
-  height: 9rem
+  border-bottom: 1px solid $border
+  position: fixed
+  height: 10rem
   width: 100%
-  z-index: 1
+  z-index: 2
   @media (min-width: $medium)
   &_logo
     width: 36rem
@@ -40,12 +43,15 @@ export default {
     display: flex
     align-items: center
     gap: 1.6rem
-  & .logo
-    font-size: 2.2rem
-    font-weight: 900
-    line-height: 2.2rem
-    @media (min-width: $medium)
-      font-size: 2.6rem
+    & .logo, i
+      font-family: 'Inter', sans-serif
+      font-size: 2rem
+      font-weight: 600
+      line-height: 2.2rem
+      @media (min-width: $medium)
+        font-size: 2.4rem
+    & i
+      margin-right: 0.8rem
   &_links
     display: flex
     align-items: center
@@ -54,22 +60,11 @@ export default {
     &:not(:last-of-type):hover
       border: 1px solid $black
       border-radius: 5rem
+    & *
+      font-size: 1.5rem
     & .login
-      background: $black
-      border: 1px solid $black
-      border-radius: 5rem
-      color: $white
-      cursor: pointer
-      display: flex
-      align-items: center
-      justify-content: center
-      gap: 1.2rem
-      font-size: 1.7rem
-      font-weight: 600
       padding: 0 3rem
       transition: all 0.3s ease
-      min-height: 3.6rem
-      &:hover
-        background: $white
-        color: $black
+      min-height: 4.2rem
+
 </style>
